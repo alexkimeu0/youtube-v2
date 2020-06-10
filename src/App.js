@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import api from "./api/api";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from "./components/Home";
+
+import "./App.css";
+
+class App extends React.Component {
+  state = {
+    videos: [],
+  };
+
+  componentDidMount = async () => {
+    const res = await api.get("search", {
+      params: {
+        part: "snippet",
+        maxResult: 5,
+        chart: "mostPopular",
+        key: "AIzaSyA5CAS4LL3H-a4Bt1GvxPq9Pp_CylSfqjg",
+      },
+    });
+
+    this.setState({
+      videos: res.data.items,
+    });
+  };
+
+  render() {
+    return (
+      <div className="container">
+        <Home topVideos={this.state.videos} />
+      </div>
+    );
+  }
 }
 
 export default App;
