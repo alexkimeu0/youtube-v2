@@ -62,7 +62,7 @@ class App extends React.Component {
         </div>
         <Home topVideos={videos} />
         <div className="selected-vids">
-          {/* <VideoDetail video={selectedVideo} /> */}
+          <VideoDetail video={selectedVideo} />
           <VideoList videos={videos} selectVideo={this.selectVideo} />
         </div>
       </div>
