@@ -1,0 +1,5 @@
+form input {
+  padding: 0.3rem;
+  width: 50vw;
+  display: flex;
+}
