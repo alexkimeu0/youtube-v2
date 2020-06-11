@@ -46,7 +46,7 @@ class App extends React.Component {
     });
   };
 
-  onVideoSelect = (video) => {
+  selectVideo = (video) => {
     this.setState({
       selectedVideo: video,
     });
@@ -62,8 +62,8 @@ class App extends React.Component {
         </div>
         <Home topVideos={videos} />
         <div className="selected-vids">
-          <VideoDetail video={selectedVideo} />
-          <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
+          {/* <VideoDetail video={selectedVideo} /> */}
+          <VideoList videos={videos} selectVideo={this.selectVideo} />
         </div>
       </div>
     );

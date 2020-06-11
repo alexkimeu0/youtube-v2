@@ -2,10 +2,11 @@ import React from "react";
 
 import VideoItem from "./VideoItem";
 
-const VideoList = ({ videos, onVideoSelect }) => {
-  return videos.map((video, id) => (
-    <VideoItem key={id} onVideoSelect={onVideoSelect} video={video} />
+const VideoList = ({ videos, selectVideo }) => {
+  const videosList = videos.map((video, id) => (
+    <VideoItem key={id} selectVideo={selectVideo} video={video} />
   ));
+  return <div>{videosList}</div>;
 };
 
 export default VideoList;
