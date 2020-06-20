@@ -22,7 +22,7 @@ class App extends React.Component {
         part: "snippet",
         maxResult: 5,
         chart: "mostPopular",
-        key: "AIzaSyA5CAS4LL3H-a4Bt1GvxPq9Pp_CylSfqjg",
+        key: "",
       },
     });
 
@@ -47,9 +47,7 @@ class App extends React.Component {
   };
 
   selectVideo = (video) => {
-    this.setState({
-      selectedVideo: video,
-    });
+    console.log(video);
   };
 
   render() {
